@@ -32,5 +32,7 @@ app.put('/image', (req, res) => { image.handleImage(req, res, db)})
 app.post('/imageurl', (req, res) => { image.handleApiCall(req, res)})
 
 
-const port = process.env.PORT || 3000;
-app.listen(port, () => console.log(`App listening on ${port}`));
+const server = app.listen(process.env.PORT || 5000, () => {
+  const port = server.address().port;
+  console.log(`Express is working on port ${port}`);
+});
